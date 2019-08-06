@@ -1,3 +1,10 @@
-<p>
-  user-page works!
-</p>
+<app-header title="User" [backBtn]="true"></app-header>
+<ion-content>
+  <ion-grid *ngIf="(user$|async) as user">
+    <ion-row>
+      <ion-col>
+        <pre>{{user|json}}</pre>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

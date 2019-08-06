@@ -4,13 +4,27 @@
     <ion-row>
       <ion-col padding>
         <ion-title color="primary">
-            {{post?.title}}
+            <h1>{{post?.title}}</h1>
+            <p *ngIf="(user$|async) as user">
+              <i>
+                <small>
+                  Publié par:
+                  <a [routerLink]="'../../users/' + post?.userId">
+                    {{user?.name}}
+                  </a>
+                </small>
+              </i>
+            </p>
         </ion-title>
-        <ion-text margin-top>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col padding>
+        <ion-text>
           {{post?.body}}
         </ion-text>
       </ion-col>
-    </ion-row>
+      </ion-row>
   </ion-grid>
   <ion-grid *ngIf="(comments$|async) as comments">
     <ion-row>
@@ -23,7 +37,7 @@
                 <h3>{{comment?.name}}</h3>
               </ion-text> 
               <ion-text>
-                <p><i><a [routerLink]="'../../users/' + comment?.email.split('@')[0].toLowerCase()">{{comment?.email}}</a></i></p>
+                <p><i>{{comment?.email}}</i></p>
               </ion-text>
               <p>{{comment?.body}}</p>
             </ion-label>
