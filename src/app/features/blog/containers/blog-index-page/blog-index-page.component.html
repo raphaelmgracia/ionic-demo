@@ -1,0 +1,26 @@
+<app-header title="Blog"></app-header>
+<ion-content>
+  <ion-grid>
+    <ion-row *ngIf="(posts$|async) as posts; else noData">
+      <ion-col>
+        <ion-card tappable [routerLink]="post.id" *ngFor="let post of posts">
+          <ion-card-header>
+            <ion-card-title color="primary">{{post?.title}}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text>
+                {{post?.body}}
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ng-template #noData>
+      <ion-row>
+        <ion-col>
+          <ion-text>no posts found...</ion-text>
+        </ion-col>
+      </ion-row>
+    </ng-template>
+  </ion-grid>
+</ion-content>

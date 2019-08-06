@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ModalController } from '@ionic/angular';
+import { DemoModalComponent } from '../components/demo-modal/demo-modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +10,21 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  constructor(
+    public modalController: ModalController,
+    public router: Router
+  ) {
+  }
+
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: DemoModalComponent
+    });
+    return await modal.present();
+  }
+  checkDate($event) {
+    console.log(new Date($event.detail.value));
+    
+  }
 
 }
