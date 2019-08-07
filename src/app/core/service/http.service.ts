@@ -18,7 +18,9 @@ export class HttpService {
   }
 
   post({param, body}: {param: string, body: any}) {
-    return this._http.post(param, body).pipe(
+  // post(data: {param: string, body: any}) {
+  // post(param: string, body: any) {
+    return this._http.post(param, body, {}).pipe(
       tap(res => console.log('http POST response-> ', res))
     );
   }

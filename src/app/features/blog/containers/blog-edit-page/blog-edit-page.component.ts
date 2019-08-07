@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpService } from 'src/app/core/service/http.service';
+import { pipe } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-blog-edit-page',
@@ -36,8 +38,10 @@ export class BlogEditPageComponent implements OnInit {
     const {error = null, ...post} = await this._http.post({
       param: 'https://jsonplaceholder.typicode.com/posts',
       body: this.form.value
-    }).toPromise().then((res: any) => res);
-    if (error && post) {
+    }).pipe(
+      tap(data => console.log('data-> ', data))
+    ).toPromise().then((res: any) => res);
+    if (error) {
       console.log('Error: ', error);
       return;
     }
