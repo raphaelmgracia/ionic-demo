@@ -33,14 +33,14 @@ export class BlogEditPageComponent implements OnInit {
       console.log(this.form);
       return;
     }
-    const {id = null, ...error} = await this._http.post({
+    const {error = null, ...post} = await this._http.post({
       param: 'https://jsonplaceholder.typicode.com/posts',
       body: this.form.value
-    }).toPromise().then((res: {id: string}) => res);
-    if (!id && error) {
+    }).toPromise().then((res: any) => res);
+    if (error && post) {
       console.log('Error: ', error);
       return;
     }
-    console.log('Success :', id);
+    console.log('Success :', post);
   }
 }
