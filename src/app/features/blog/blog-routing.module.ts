@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BlogIndexPageComponent } from './containers/blog-index-page/blog-index-page.component';
 import { BlogItemPageComponent } from './containers/blog-item-page/blog-item-page.component';
+import { BlogEditPageComponent } from './containers/blog-edit-page/blog-edit-page.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,10 @@ const routes: Routes = [
       {
         path: '',
         component: BlogIndexPageComponent
+      },
+      {
+        path: 'edit',
+        component: BlogEditPageComponent
       },
       {
         path: ':id',

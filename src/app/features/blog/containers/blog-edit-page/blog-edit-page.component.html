@@ -1,0 +1,23 @@
+<app-header title="Edit Blog item"></app-header>
+<ion-content>
+  <form [formGroup]="form">
+    <ion-list>
+      <ion-item>
+        <ion-label>
+          Titre:
+        </ion-label>
+        <ion-input formControlName="title" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Body:
+        </ion-label>
+        <ion-textarea formControlName="body" type="text"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <ion-button (click)="submit()">Submit</ion-button>
+  </form>
+  <pre>
+    {{form.value|json}}
+  </pre>
+</ion-content>
