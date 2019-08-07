@@ -40,6 +40,19 @@
       "timeEnd",
       "trace"
     ],
+    "tagname-lowercase": false,
+    "attr-lowercase": false,
+    "attr-value-double-quotes": false,
+    "attr-value-not-empty": false,
+    "attr-no-duplication": true,
+    "doctype-first": false, 
+    "tag-pair": true, 
+    "tag-self-close": false, 
+    "spec-char-escape": true, 
+    "id-unique": true, 
+    "src-not-empty": true, 
+    "alt-require": true,
+    "inline-script-disabled": true,
     "variable-name": {
       "options": [
         "ban-keywords",
@@ -70,7 +83,6 @@
     ],
     "trailing-comma": false,
     "no-output-on-prefix": true,
-    "no-inputs-metadata-property": true,
     "no-inputs-metadata-property": true,
     "no-host-metadata-property": true,
     "no-input-rename": true,
