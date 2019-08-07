@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { HttpService } from 'src/app/core/service/http.service';
 
 @Component({
   selector: 'app-blog-edit-page',
@@ -10,12 +11,14 @@ export class BlogEditPageComponent implements OnInit {
 
   public form: FormGroup;
 
-  constructor() { }
+  constructor(
+    private _http: HttpService
+  ) { }
 
   ngOnInit() {
     this.form = new FormGroup({
       title: new FormControl(
-        ['hello'],
+        'hello',
         Validators.compose([
           Validators.required,
           Validators.minLength(1)
@@ -25,11 +28,19 @@ export class BlogEditPageComponent implements OnInit {
     });
   }
 
-  submit() {
+  async submit() {
     if (!this.form.valid) {
       console.log(this.form);
       return;
     }
-    console.log('TODO: make request to API...');
+    const {id = null, ...error} = await this._http.post({
+      param: 'https://jsonplaceholder.typicode.com/posts',
+      body: this.form.value
+    }).toPromise().then((res: {id: string}) => res);
+    if (!id && error) {
+      console.log('Error: ', error);
+      return;
+    }
+    console.log('Success :', id);
   }
 }
