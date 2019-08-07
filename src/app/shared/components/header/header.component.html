@@ -1,9 +1,9 @@
-<ion-header>
-  <ion-toolbar color="primary">
-    <ion-icon (click)="back()" *ngIf="backBtn" name="arrow-back" slot="start"></ion-icon>
-    <!-- <ion-back-button slot="start"></ion-back-button> -->
-    <ion-title>
-      {{ title }}
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-toolbar color="primary">
+  <ion-title>
+    {{ title }}
+  </ion-title>
+  <!-- using ng-content to handle template from parent -->
+  <ng-content>
+    <!-- template from patent will go here -->
+  </ng-content>
+</ion-toolbar>

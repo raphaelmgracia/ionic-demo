@@ -1,5 +1,8 @@
-<app-header title="Blog item" backBtn="true"></app-header>
-<ion-content>
+<ion-header>
+  <app-header title="Blog Item">
+      <ion-back-button slot="start"></ion-back-button>
+  </app-header>
+</ion-header><ion-content>
   <ion-grid *ngIf="post$|async as post">
     <ion-row>
       <ion-col padding>

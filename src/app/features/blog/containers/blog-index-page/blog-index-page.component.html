@@ -1,4 +1,8 @@
-<app-header title="Blog"></app-header>
+<ion-header>
+  <app-header title="Blog">
+      <ion-back-button slot="start"></ion-back-button>
+  </app-header>
+</ion-header>
 <ion-content>
   <ion-grid>
     <ion-row *ngIf="(posts$|async) as posts; else noData">
