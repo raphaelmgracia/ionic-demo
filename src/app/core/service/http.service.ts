@@ -13,7 +13,13 @@ export class HttpService {
 
   get(param: string) {
     return this._http.get(param).pipe(
-      tap(res => console.log('http response-> ', res))
-    )
+      tap(res => console.log('http GET response-> ', res))
+    );
+  }
+
+  post({param, body}: {param: string, body: any}) {
+    return this._http.post(param, body).pipe(
+      tap(res => console.log('http POST response-> ', res))
+    );
   }
 }
