@@ -24,7 +24,6 @@ import { CoreModule } from './core/core.module';
     CoreModule,
     IonicModule.forRoot({
       mode: 'md',
-      
     }),
     AppRoutingModule
   ],
