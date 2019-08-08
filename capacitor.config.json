@@ -1,5 +1,5 @@
 {
-  "appId": "ch.nicolasfazio.myapp",
+  "appId": "io.ionic.starter",
   "appName": "myApp",
   "bundledWebRuntime": false,
   "npmClient": "npm",
