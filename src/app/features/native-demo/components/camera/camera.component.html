@@ -15,5 +15,10 @@
         <ion-button (click)="tackPicture()">Take Picture</ion-button>
       </ion-col>
     </ion-row>
+    <ion-row>
+      <ion-col>
+        async: {{data$|async|json}}
+      </ion-col>
+    </ion-row>
   </ion-grid>
 </ion-content>
