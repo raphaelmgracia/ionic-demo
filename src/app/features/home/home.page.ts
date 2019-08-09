@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { DemoModalComponent } from '../core/components/demo-modal/demo-modal.component';
 import { Router } from '@angular/router';
+import { DemoModalComponent } from 'src/app/core/components/demo-modal/demo-modal.component';
 
 @Component({
   selector: 'app-home',
