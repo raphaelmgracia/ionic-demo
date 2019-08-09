@@ -13,6 +13,9 @@
     <ion-row>
       <ion-col>
         <ion-button (click)="tackPicture()">Take Picture</ion-button>
+        <ion-button (click)="watchPosition()">Watch Position</ion-button>
+        <ion-button (click)="scheduleNowWithIcon()">Dislpay Notif (not work)</ion-button>
+        <ion-button (click)="displayToast()">Dislpay toast</ion-button>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -20,6 +23,11 @@
         async: {{data$|async|json}}
       </ion-col>
     </ion-row>
+    <ion-row>
+        <ion-col>
+          position: {{position|json}}
+        </ion-col>
+      </ion-row>
     <ion-row *ngIf="(data$|async) as data">
       <ion-col>
         <!-- TODO: using library to draw 3D Object -->
