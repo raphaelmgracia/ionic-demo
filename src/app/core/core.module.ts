@@ -3,14 +3,22 @@ import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { UpdatesNotificationComponent } from './components/updates-notification/updates-notification.component';
 import { IonicModule } from '@ionic/angular';
+import { DemoModalComponent } from './components/demo-modal/demo-modal.component';
 
 const COMPONENTS = [
-  UpdatesNotificationComponent
+  UpdatesNotificationComponent,
+  DemoModalComponent
+];
+const ENTRY_COMPONENTS = [
+  DemoModalComponent
 ];
 
 @NgModule({
   declarations: [
     ...COMPONENTS
+  ],
+  entryComponents: [
+    ...ENTRY_COMPONENTS
   ],
   imports: [
     HttpClientModule,
@@ -18,7 +26,8 @@ const COMPONENTS = [
     IonicModule
   ],
   exports: [
-    ...COMPONENTS
+    ...COMPONENTS,
+    ...ENTRY_COMPONENTS
   ]
 })
 export class CoreModule { }

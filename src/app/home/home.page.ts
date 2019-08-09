@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { DemoModalComponent } from '../components/demo-modal/demo-modal.component';
+import { DemoModalComponent } from '../core/components/demo-modal/demo-modal.component';
 import { Router } from '@angular/router';
 
 @Component({

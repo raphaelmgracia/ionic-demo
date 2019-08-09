@@ -8,7 +8,6 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DemoModalComponent } from './components/demo-modal/demo-modal.component';
 import { CoreModule } from './core/core.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
@@ -16,11 +15,8 @@ import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
-    DemoModalComponent
   ],
-  entryComponents: [
-    DemoModalComponent
-  ],
+  entryComponents: [],
   imports: [
     BrowserModule,
     CoreModule,
